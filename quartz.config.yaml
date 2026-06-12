@@ -1,275 +1,71 @@
-# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: "Catatan PWK ITB"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
-  analytics:
-    provider: plausible
-  locale: en-US
-  baseUrl: menatasappk.github.io/catatan-pl
-  ignorePatterns:
-    - private
-    - templates
-    - .obsidian
+  analytics: null
+  locale: "id-ID"
+  baseUrl: "menatasappk.github.io/catatan-pl"
+  ignorePatterns: [".obsidian", ".trash", "__series__"]
+  defaultDateType: "created"
+  generateFrontmatter: true
   theme:
-    fontOrigin: googleFonts
+    fontOrigin: "googleFonts"
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: "Lora"               # Font serif estetik buat judul matkul
+      body: "Inter"                # Font sans-serif super clean buat catatan
+      code: "Fira Code"            # Font buat angka/kode biar presisi
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#fbf9f4"           # Background cream lembut biar mata gak capek
+        lightgray: "#e5e0d8"       # Warna border & garis tabel (soft gray-cream)
+        gray: "#8c857b"            # Warna teks sekunder / tanggal
+        darkgray: "#2d312e"        # Warna teks utama (hijau-hitam gelap)
+        dark: "#3a5040"            # Warna judul utama (Hijau Sage Tua khas PWK)
+        secondary: "#4a6b53"       # Warna link aktif (Hijau Sage Daun)
+        tertiary: "#c87d55"        # Warna pas link di-hover / tag (Terracotta)
+        highlight: "rgba(74, 107, 83, 0.08)"
+        textHighlight: "#fff2cc"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#161917"           # Background dark mode (hijau hutan gelap nyaman)
+        lightgray: "#242926"       # Warna border malam
+        gray: "#67726a"            # Warna teks sekunder malam
+        darkgray: "#e3e7e4"        # Warna teks utama malam (broken white)
+        dark: "#8cb899"            # Warna judul utama malam (light sage green)
+        secondary: "#70a280"       # Warna link malam
+        tertiary: "#dd9569"        # Warna hover malam (soft terracotta)
+        highlight: "rgba(112, 162, 128, 0.1)"
+        textHighlight: "#b33a3a"
 plugins:
-  - source: github:quartz-community/created-modified-date
-    enabled: true
-    options:
-      defaultDateType: modified
-      priority:
-        - frontmatter
-        - git
-        - filesystem
-    order: 10
-  - source: github:quartz-community/syntax-highlighting
-    enabled: true
-    options:
-      theme:
-        light: github-light
-        dark: github-dark
-      keepBackground: false
-    order: 20
-  - source: github:quartz-community/obsidian-flavored-markdown
-    enabled: true
-    options:
-      enableInHtmlEmbed: false
-      enableCheckbox: true
-    order: 30
-  - source: github:quartz-community/github-flavored-markdown
-    enabled: true
-    order: 40
-  - source: github:quartz-community/table-of-contents
-    enabled: true
-    order: 50
-    layout:
-      position: right
-      priority: 30
-  - source: github:quartz-community/crawl-links
-    enabled: true
-    options:
-      markdownLinkResolution: shortest
-    order: 60
-  - source: github:quartz-community/description
-    enabled: true
-    order: 70
-  - source: github:quartz-community/latex
-    enabled: true
-    options:
-      renderEngine: katex
-    order: 80
-  - source: github:quartz-community/citations
-    enabled: false
-    order: 85
-  - source: github:quartz-community/hard-line-breaks
-    enabled: false
-    order: 90
-  - source: github:quartz-community/ox-hugo
-    enabled: false
-    order: 91
-  - source: github:quartz-community/roam
-    enabled: false
-    order: 92
-  - source: github:quartz-community/fonts
-    enabled: true
-  - source: github:quartz-community/remove-draft
-    enabled: true
-  - source: github:quartz-community/explicit-publish
-    enabled: false
-  - source: github:quartz-community/unlisted-pages
-    enabled: true
-    options: {}
-    order: 45
-  - source: github:quartz-community/encrypted-pages
-    enabled: true
-    options:
-      iterations: 600000
-      passwordField: password
-      unlistWhenEncrypted: false
-      outputPath: static/encryptedContentIndex.json
-  - source: github:quartz-community/stacked-pages
-    enabled: false
-    layout:
-      position: afterBody
-      priority: 50
-      display: all
-  - source: github:quartz-community/alias-redirects
-    enabled: true
-  - source: github:quartz-community/content-index
-    enabled: true
-    options:
-      enableSiteMap: true
-      enableRSS: true
-  - source: github:quartz-community/favicon
-    enabled: true
-  - source: github:quartz-community/og-image
-    enabled: true
-  - source: github:quartz-community/cname
-    enabled: true
-  - source: github:quartz-community/canvas-page
-    enabled: true
-  - source: github:quartz-community/content-page
-    enabled: true
-  - source: github:quartz-community/folder-page
-    enabled: true
-  - source: github:quartz-community/tag-page
-    enabled: true
-  - source: github:quartz-community/explorer
-    enabled: true
-    layout:
-      position: left
-      priority: 50
-  - source: github:quartz-community/graph
-    enabled: true
-    layout:
-      position: right
-      priority: 10
-  - source: github:quartz-community/search
-    enabled: true
-    layout:
-      position: left
-      priority: 20
-      group: toolbar
-      groupOptions:
-        grow: true
-  - source: github:quartz-community/backlinks
-    enabled: true
-    layout:
-      position: right
-      priority: 50
-  - source: github:quartz-community/article-title
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 10
-  - source: github:quartz-community/content-meta
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 20
-  - source: github:quartz-community/tag-list
-    enabled: false
-    layout:
-      position: beforeBody
-      priority: 30
-  - source: github:quartz-community/page-title
-    enabled: true
-    layout:
-      position: left
-      priority: 10
-  - source: github:quartz-community/darkmode
-    enabled: true
-    layout:
-      position: left
-      priority: 30
-      group: toolbar
-  - source: github:quartz-community/reader-mode
-    enabled: true
-    layout:
-      position: left
-      priority: 35
-      group: toolbar
-  - source: github:quartz-community/breadcrumbs
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 5
-      condition: not-index
-  - source: github:quartz-community/comments
-    enabled: false
-    options:
-      provider: giscus
-      options: {}
-    layout:
-      position: afterBody
-      priority: 10
-  - source: github:quartz-community/footer
-    enabled: true
-    options:
-      links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
-  - source: github:quartz-community/recent-notes
-    enabled: false
-  - source: github:quartz-community/spacer
-    enabled: true
-    options: {}
-    order: 25
-    layout:
-      position: left
-      priority: 25
-      display: mobile-only
-  - source: github:quartz-community/bases-page
-    enabled: true
-    options: {}
-    order: 50
-  - source: github:quartz-community/note-properties
-    enabled: true
-    options:
-      includeAll: false
-      includedProperties:
-        - description
-        - tags
-        - aliases
-      excludedProperties: []
-      hidePropertiesView: false
-      delimiters: ---
-      language: yaml
-    order: 5
-    layout:
-      position: beforeBody
-      priority: 15
-      display: all
-layout:
-  groups:
-    toolbar:
-      priority: 35
-      direction: row
-      gap: 0.5rem
-  byPageType:
-    "404":
-      positions:
-        beforeBody: []
-        left: []
-        right: []
-    content: {}
-    folder:
-      exclude:
-        - reader-mode
-      positions:
-        right: []
-    tag:
-      exclude:
-        - reader-mode
-      positions:
-        right: []
-    canvas: {}
-    bases: {}
+  transformers:
+    - FrontMatter:
+    - CreatedModifiedDate:
+        priority: ["frontmatter", "filesystem"]
+    - SyntaxHighlighting:
+        theme:
+          light: "github-light"
+          dark: "github-dark"
+    - ObsidianFlavoredMarkdown:
+        enableInHtmlEmbed: false
+    - GitHubFlavoredMarkdown:
+    - TableOfContents:
+    - CrawlLinks:
+        markdownLinkResolution: "shortest"
+    - Description:
+    - Latex:
+        renderEngine: "katex"
+  filters:
+    - RemoveDrafts:
+  emitters:
+    - AliasRedirects:
+    - ComponentResources:
+    - ContentPage:
+    - FolderPage:
+    - TagPage:
+    - ContentIndex:
+        enableSiteMap: true
+        enableRSS: true
+    - Assets:
+    - Static:
+    - NotFoundPage:
