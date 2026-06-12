@@ -1,3 +1,33 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Import Font Keren dari Google
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,500;1,400&display=swap');
+
+// Ganti Font Default secara Paksa
+:root {
+  --headerFont: "Lora", serif !important;
+  --bodyFont: "Inter", sans-serif !important;
+}
+
+// Warnai Ulang Tema Web (Earthy PWK Theme)
+:root[data-theme="light"] {
+  --light: #fbf9f4 !important;
+  --lightgray: #e5e0d8 !important;
+  --gray: #8c857b !important;
+  --darkgray: #2d312e !important;
+  --dark: #3a5040 !important;
+  --secondary: #4a6b53 !important;
+  --tertiary: #c87d55 !important;
+  --highlight: rgba(74, 107, 83, 0.08) !important;
+}
+
+:root[data-theme="dark"] {
+  --light: #161917 !important;
+  --lightgray: #242926 !important;
+  --gray: #67726a !important;
+  --darkgray: #e3e7e4 !important;
+  --dark: #8cb899 !important;
+  --secondary: #70a280 !important;
+  --tertiary: #dd9569 !important;
+  --highlight: rgba(112, 162, 128, 0.1) !important;
+}// put your custom CSS here!
