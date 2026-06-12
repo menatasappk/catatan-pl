@@ -13,28 +13,28 @@ configuration:
     fontOrigin: "googleFonts"
     cdnCaching: true
     typography:
-      header: "Lora"               # Font serif estetik buat judul matkul
-      body: "Inter"                # Font sans-serif super clean buat catatan
-      code: "Fira Code"            # Font buat angka/kode biar presisi
+      header: "Lora"
+      body: "Inter"
+      code: "Fira Code"
     colors:
       lightMode:
-        light: "#fbf9f4"           # Background cream lembut biar mata gak capek
-        lightgray: "#e5e0d8"       # Warna border & garis tabel (soft gray-cream)
-        gray: "#8c857b"            # Warna teks sekunder / tanggal
-        darkgray: "#2d312e"        # Warna teks utama (hijau-hitam gelap)
-        dark: "#3a5040"            # Warna judul utama (Hijau Sage Tua khas PWK)
-        secondary: "#4a6b53"       # Warna link aktif (Hijau Sage Daun)
-        tertiary: "#c87d55"        # Warna pas link di-hover / tag (Terracotta)
+        light: "#fbf9f4"
+        lightgray: "#e5e0d8"
+        gray: "#8c857b"
+        darkgray: "#2d312e"
+        dark: "#3a5040"
+        secondary: "#4a6b53"
+        tertiary: "#c87d55"
         highlight: "rgba(74, 107, 83, 0.08)"
         textHighlight: "#fff2cc"
       darkMode:
-        light: "#161917"           # Background dark mode (hijau hutan gelap nyaman)
-        lightgray: "#242926"       # Warna border malam
-        gray: "#67726a"            # Warna teks sekunder malam
-        darkgray: "#e3e7e4"        # Warna teks utama malam (broken white)
-        dark: "#8cb899"            # Warna judul utama malam (light sage green)
-        secondary: "#70a280"       # Warna link malam
-        tertiary: "#dd9569"        # Warna hover malam (soft terracotta)
+        light: "#161917"
+        lightgray: "#242926"
+        gray: "#67726a"
+        darkgray: "#e3e7e4"
+        dark: "#8cb899"
+        secondary: "#70a280"
+        tertiary: "#dd9569"
         highlight: "rgba(112, 162, 128, 0.1)"
         textHighlight: "#b33a3a"
 plugins:
